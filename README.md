@@ -1,11 +1,11 @@
 # NCU-CE3005B-FinalProject
 
 ## Intro
-Author : ChunHo,Lin (1chooo)
+Author : ChunHo,Lin (1chooo)  
 
 Created time: 2022/06/22  
 
-It is the final project of the course: CE3005-B in NCU which name of the course is "Algorithmics".
+It is the final project of the course: CE3005-B in NCU which name of the course is "Algorithmics".  
 
 ---
 
