@@ -19,3 +19,16 @@ $ conda install tensorflow
 $ conda install keras
 $ conda install matplotlib
 ```
+
+## 中文手寫辨識準確率及損失率
+
+![plot](src/img/loss_and_accuracy.png)
+
+
+## Processing
+
+![plot](src/img/process.png)
+
+## Result
+
+1[]()

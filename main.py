@@ -34,7 +34,7 @@ def dataXYPreprocess (datapath) :
 
     for root, dirs, files in os.walk(datapath) :
         for f in files :
-            label = int(root.split("/")[4])
+            label = int(root.split("/")[5])
             # print(label)
             dataY.append(label)
 
@@ -62,8 +62,8 @@ def dataXYPreprocess (datapath) :
     return dataX, dataY
 
 # Read the data and seperate them into test and train part.
-data_train_X, data_train_Y = dataXYPreprocess("./handwrite_detect/train_image")
-data_test_X, data_test_Y = dataXYPreprocess("./handwrite_detect/test_image")
+data_train_X, data_train_Y = dataXYPreprocess("./src/handwrite_detect/train_image")
+data_test_X, data_test_Y = dataXYPreprocess("./src/handwrite_detect/test_image")
 
 
 # Construct the "sequential" model.
@@ -127,8 +127,12 @@ print("Test accuracy: ", score[1])
 # Make the result visualize.
 plt.plot(trainHistory.history["loss"])
 plt.plot(trainHistory.history["val_loss"])
+
 plt.title("Train History")
 plt.ylabel("loss")
 plt.xlabel("Epoch")
+
 plt.legend(["loss", "val_loss"], loc = "upper left")
+plt.savefig("./src/img/result.jpg", dpi=300)
+
 plt.show()
