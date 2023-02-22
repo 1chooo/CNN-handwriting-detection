@@ -1,11 +1,12 @@
 # CNN-based Handwriting Detection and Classification
 
 [![project badge](https://img.shields.io/badge/1chooo-CNN__Handwriting__Dection-informational)](https://github.com/1chooo/CNN-handwriting-dection)
+[![Made with Python](https://img.shields.io/badge/Python-=3.7-blue?logo=python&logoColor=white)](https://python.org "Go to Python homepage")
+[![License](https://img.shields.io/badge/License-MIT-blue)](./LICENSE "Go to license section")
+
 [![conda version](https://img.shields.io/badge/conda-342B029.svg?&style=for-the-badge&logo=anaconda&logoColor=white)](https://docs.conda.io/en/latest/#)
 [![conda version](https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white)](https://www.tensorflow.org/)
 [![conda version](https://img.shields.io/badge/Keras-FF0000?style=for-the-badge&logo=keras&logoColor=white)](https://keras.io/)
-[![Made with Python](https://img.shields.io/badge/Python-=3.7-blue?logo=python&logoColor=white)](https://python.org "Go to Python homepage")
-[![License](https://img.shields.io/badge/License-MIT-blue)](./LICENSE "Go to license section")
 
 ## A brief summary of the project
 Author : ChunHo,Lin (1chooo)  
@@ -43,3 +44,11 @@ You guys can also check more details about the virtual environment in the `requi
 ## Result
 
 ![result](src/img/result.jpg)
+
+## License
+
+Released under [MIT](./LICENSE) by [@1chooo](https://github.com/1chooo).
+
+- This software can be modified and reused without restriction.
+- The original license must be included with any copies of this software.
+- If a significant portion of the source code is used, please provide a link back to this repository.
