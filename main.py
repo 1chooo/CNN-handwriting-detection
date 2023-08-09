@@ -73,18 +73,23 @@ def build_model():
     # Construct the "Convolutional layer" and 
     # set the output space, kernal size, 
     # and take "relu" as the activation function
-    model.add(Conv2D(32, kernel_size = (3, 3), activation = "relu", input_shape = (28, 28, 1)))
+    model.add(Conv2D(
+        32, 
+        kernel_size=(3, 3), 
+        activation="relu", 
+        input_shape=(28, 28, 1)
+    ))
 
     # Construct "pooling layer" and set the size.
-    model.add(MaxPooling2D(pool_size = (2, 2)))
+    model.add(MaxPooling2D(pool_size=(2, 2)))
 
     # Construct the "Convolutional layer" then this time 
     # we set the size of the fillter to 64 and 
     # the others situation is still the same.
-    model.add(Conv2D(64, (3, 3), activation = "relu"))
+    model.add(Conv2D(64, (3, 3), activation="relu"))
 
     # Construct "pooling layer" and fetch the maximum of it.
-    model.add(MaxPooling2D(pool_size = (2, 2)))
+    model.add(MaxPooling2D(pool_size=(2, 2)))
 
     # We dropout in the 25 percent to prevent over fitting.
     model.add(Dropout(0, 1))
@@ -96,19 +101,21 @@ def build_model():
     model.add(Dropout(0.1))
 
     # Contact all layer we have constructed, and the amount of output is 128.
-    model.add(Dense(128, activation = "relu"))
+    model.add(Dense(128, activation="relu"))
     model.add(Dropout(0.25))
 
     # Classify all results through the activation "softmax", 
     # and the total of the class is 10.
-    model.add(Dense(units = 10, activation = "softmax"))
+    model.add(Dense(units=10, activation="softmax"))
 
 
     # We want to start compile the result; 
     # therefore we pick up the method of "loss", "optimizer", and "Effectiveness"
-    model.compile(loss = "categorical_crossentropy",
-                optimizer = "adam", 
-                metrics = ["accuracy"])
+    model.compile(
+        loss="categorical_crossentropy",
+        optimizer="adam", 
+        metrics=["accuracy"]
+    )
 
     return model
 
@@ -116,14 +123,18 @@ def build_model():
 model = build_model()
 
 # training and set the times to 500.
-trainHistory = model.fit(data_train_X, data_train_Y, 
-                         batch_size = 32, 
-                         epochs = 500, verbose = 1, 
-                         validation_split = 0.1)
+trainHistory = model.fit(
+    data_train_X, 
+    data_train_Y, 
+    batch_size=32, 
+    epochs=500, 
+    verbose=1, 
+    validation_split=0.1
+)
 
 
 # Show the result.
-score = model.evaluate(data_test_X, data_test_Y, verbose = 0)
+score = model.evaluate(data_test_X, data_test_Y, verbose=0)
 
 print("Test loss: ", score[0])
 print("Test accuracy: ", score[1])
@@ -137,7 +148,7 @@ plt.title("Train History")
 plt.ylabel("loss")
 plt.xlabel("Epoch")
 
-plt.legend(["loss", "val_loss"], loc = "upper left")
+plt.legend(["loss", "val_loss"], loc="upper left")
 plt.savefig("./src/img/result.jpg", dpi=300)
 
 plt.show()
