@@ -1,14 +1,13 @@
-import os
-import random
-import numpy as np
-import keras
-from PIL import Image
+# -*- coding: utf-8 -*-
+'''
+Create Date: 2023/09/26
+Author: @1chooo (Hugo ChunHo Lin)
+Version: v0.0.1
+'''
+
 from keras.models import Sequential
 from keras.layers import Dense, Dropout, Flatten
 from keras.layers import Conv2D, MaxPooling2D
-from keras.models import load_model
-from keras.utils import np_utils
-from matplotlib import pyplot as plt
 
 def build_model():
     # Construct the "sequential" model.

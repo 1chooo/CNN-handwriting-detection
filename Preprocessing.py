@@ -1,13 +1,14 @@
+# -*- coding: utf-8 -*-
+'''
+Create Date: 2023/09/26
+Author: @1chooo (Hugo ChunHo Lin)
+Version: v0.0.1
+'''
+
 import os
-import random
 import numpy as np
-import keras
 from PIL import Image
-from keras.models import Sequential
-from keras.layers import Dense, Dropout, Flatten
-from keras.layers import Conv2D, MaxPooling2D
-from keras.models import load_model
-from keras.utils import np_utils
+import tensorflow as tf
 from matplotlib import pyplot as plt
 
 # Create the function to read the data we have, then preprocess them. 
@@ -56,6 +57,6 @@ def dataXYPreprocess (datapath) :
     dataX = dataX.reshape(pictureCount, imageRow, imageColumn, 1)
 
     # Diverse the label into every class we know in line 33 we have announced.
-    dataY = np_utils.to_categorical(dataY, numberClass)
+    dataY = tf.keras.utils.to_categorical(dataY, numberClass)
     # print(dataY)
     return dataX, dataY
