@@ -49,7 +49,7 @@ $ pip install tensorflow==1.15.0
 
 ## Result
 
-![result](img/result.jpg)
+![result](img/results.jpg)
 
 ## Reflection on the outcome: 
 

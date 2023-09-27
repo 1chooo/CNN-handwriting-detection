@@ -5,15 +5,18 @@ Author: @1chooo (Hugo ChunHo Lin)
 Version: v0.0.1
 '''
 
-from Preprocessing import dataXYPreprocess
+from os.path import join
+from Preprocessing import load_and_preprocess_data
 from Model import build_model
 from Plot import plot_model_results
 
-if __name__ == '__main__':
+def main() -> None:
 
     # Read the data and seperate them into test and train part.
-    data_train_X, data_train_Y = dataXYPreprocess("./data/train_image")
-    data_test_X, data_test_Y = dataXYPreprocess("./data/test_image")
+    train_data_dir = join(".", "data", "train_image")
+    test_data_dir = join(".", "data", "test_image")
+    data_train_X, data_train_Y = load_and_preprocess_data(train_data_dir)
+    data_test_X, data_test_Y = load_and_preprocess_data(test_data_dir)
 
     model = build_model()
 
@@ -33,6 +36,9 @@ if __name__ == '__main__':
     print("Test loss: ", score[0])
     print("Test accuracy: ", score[1])
 
-    model.save("hugo_cnn_handwriting.h5")
+    model.save("hugo_cnn_handwriting.keras")
 
     plot_model_results(train_history)
+
+if __name__ == '__main__':
+    main()

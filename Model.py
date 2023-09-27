@@ -9,7 +9,7 @@ from keras.models import Sequential
 from keras.layers import Dense, Dropout, Flatten
 from keras.layers import Conv2D, MaxPooling2D
 
-def build_model():
+def build_model() -> Sequential:
     # Construct the "sequential" model.
     model = Sequential()
 
@@ -20,7 +20,7 @@ def build_model():
         32, 
         kernel_size=(3, 3), 
         activation="relu", 
-        input_shape=(28, 28, 1)
+        input_shape=(28, 28, 1),
     ))
 
     # Construct "pooling layer" and set the size.
@@ -51,13 +51,12 @@ def build_model():
     # and the total of the class is 10.
     model.add(Dense(units=10, activation="softmax"))
 
-
     # We want to start compile the result; 
     # therefore we pick up the method of "loss", "optimizer", and "Effectiveness"
     model.compile(
         loss="categorical_crossentropy",
         optimizer="adam", 
-        metrics=["accuracy"]
+        metrics=["accuracy"],
     )
 
     return model

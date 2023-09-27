@@ -10,9 +10,15 @@ model = Sequential()
 
 # 為模型加入捲基層
 # input_shape只有第一層捲基層要加入
-model.add(Conv2D(filters = 32, kernel_size=(3,3),
-            padding = "same", input_shape = (28, 28, 1),
-            activation="relu"))
+model.add(
+    Conv2D(
+        filters = 32, 
+        kernel_size=(3,3),
+        padding = "same", 
+        input_shape = (28, 28, 1),
+        activation="relu",
+    )
+)
 
 # 加入pooling
 model.add(MaxPooling2D(pool_size = (2,2)))
