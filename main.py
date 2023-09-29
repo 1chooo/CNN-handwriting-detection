@@ -31,7 +31,15 @@ def main() -> None:
     )
 
     # Show the result.
-    score = model.evaluate(data_test_X, data_test_Y, verbose=0)
+    score = model.evaluate(
+        data_test_X, 
+        data_test_Y, 
+        verbose=0,
+        batch_size=None,
+        steps=None,
+        workers=1,
+        use_multiprocessing=False,
+    )
 
     print("Test loss: ", score[0])
     print("Test accuracy: ", score[1])
