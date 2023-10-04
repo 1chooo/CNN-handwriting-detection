@@ -1,27 +1,29 @@
 # CNN-based Handwriting Detection and Classification
 
-[![project badge](https://img.shields.io/badge/1chooo-CNN__Handwriting__Dection-informational)](https://github.com/1chooo/CNN-handwriting-dection)
-[![Made with Python](https://img.shields.io/badge/Python-=3.7-blue?logo=python&logoColor=white)](https://python.org "Go to Python homepage")
-[![License](https://img.shields.io/badge/License-MIT-blue)](./LICENSE "Go to license section")
+[![project badge](https://img.shields.io/badge/1chooo-CNN__Handwriting__Dection-informational?style=for-the-badge)](https://github.com/1chooo/CNN-handwriting-dection)
+[![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](./LICENSE "Go to license section")
+[![Made with Python](https://img.shields.io/pypi/pyversions/tensorflow.svg?color=blue&style=for-the-badge)](https://python.org "Go to Python homepage")
 
 [![conda version](https://img.shields.io/badge/conda-342B029.svg?&style=for-the-badge&logo=anaconda&logoColor=white)](https://docs.conda.io/en/latest/#)
 [![conda version](https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white)](https://www.tensorflow.org/)
 [![conda version](https://img.shields.io/badge/Keras-FF0000?style=for-the-badge&logo=keras&logoColor=white)](https://keras.io/)
 
 ## A brief summary of the project
-Author : ChunHo,Lin (1chooo)  
+Author : Hugo ChunHo Lin (1chooo)  
 
 Created time: 2022/06/22  
 
-It is the final project of the course: CE3005-B in NCU which name of the course is "Algorithmics". 
+It is the final project of the course: **CE3005-B** in NCU which name of the course is "Algorithmics". 
 
 The main goal of this project is to detect the hand writing numbers with the deep learning, **CNN**.
 
 ---
 
-## Create Enviroment
+## Create Virtual Enviroment
 
-conda --version: 4.12.0
+### Build `venv` with `conda`
+
+`conda --version: 4.12.0`
  
 ```
 $ conda create --name algML python=3.7
@@ -32,15 +34,40 @@ $ conda install matplotlib
 
 You guys can also check more details about the virtual environment in the `requirements.txt` and `env.yml`
 
-### `venv`
+### Build `venv` with `virtualenv`
 
+Python version `python3.10` with `tensorflow, keras, numpy, matplotlib, pandas`
+
+#### Build `venv` for **MacOS**
+```shell
+$ pip3 install virtualenv
+$ python3.10 -m venv venv
+$ source venv/bin/activate
+$ pip install -r requirements.txt
+$ deactivate
+$ rm -rf venv     # remove the venv
 ```
-$ pip install keras==2.3.1
-$ pip install tensorflow==1.15.0
+
+#### Build `venv` for Windows
+```shell
+$ pip install virtualenv
+$ virtualenv venv
+$ venv\Scripts\activate
+$ pip install -r requirements.txt
+$ deactivate
+$ rmdir /s venv     # remove the venv
 ```
+
 ## 中文手寫辨識準確率及損失率
 
-![plot](img/loss_and_accuracy.png)
+```py
+print("Test loss: ", score[0])
+print("Test accuracy: ", score[1])
+```
+
+| Test Loss | Test Accuracy |
+| :---------: | :-------------: |
+| 0.27      | 0.97          |
 
 
 ## Processing
@@ -55,7 +82,16 @@ $ pip install tensorflow==1.15.0
 
 這個專案是我的第一次接觸機器學習的範疇，不得不說對我而言挑戰滿大的，首先的是，要搞清楚四種投影片的內容，不得不說在聽的時候是很傾珮的，還有種原來程式，這樣寫竟然可以做到那麼多事，因為當初的我以為判斷手寫辨識需要非常多程式碼，沒想到是要透過一層層的關係來讓機器回應我們希望他做的事。接著就照自己的吸收狀況來挑選想要使用的演算法，而我挑的是 CNN。
 
-![](img/thought1.png)
+```py
+train_history = model.fit(
+    data_train_X, 
+    data_train_Y, 
+    batch_size=32, 
+    epochs=500, 
+    verbose=1, 
+    validation_split=0.1,
+)
+```
 
 在開始製作時馬上就遇到超級大的瓶頸——讀檔，從來沒有讀過這種一層層架構的檔案，當時真的滿緊張的，畢竟剩下時間不多，對機器學習又有如個新手一般，馬上查了很多文章，還是無法，最後真的好在助教的幫助，在我凌晨還丟問題的時候細心回覆我，才得以讓我繼續向前做這份專案，我想也正是如此才得以在心得上侃侃而談吧～就此我正實做時，發現大多投影上的程式碼，都不太需要做更改，因為我發現改了太多，反而會跟原先演算法設計好的架構越走越遠，於是我在一連串的拼拼湊湊後發現了一個地方，只要花時間精准度就會提高的方法，那就更改以下這個變數宣告裡的`epochs`的次數
 
