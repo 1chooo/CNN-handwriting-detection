@@ -34,7 +34,7 @@ def main() -> None:
     score = model.evaluate(
         data_test_X, 
         data_test_Y, 
-        verbose=0,
+        verbose=1,
         batch_size=None,
         steps=None,
         workers=1,
