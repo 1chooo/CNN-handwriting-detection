@@ -8,7 +8,6 @@ import matplotlib.pyplot as plt
 # 以上為輸入資料集
 def data_preprocess(datapath):
     img_row, img_col = 28, 28
-    datapath = datapath
     data_x = np.zeros((28,28)).reshape(1,28,28)
     pictureCount = 0
     data_y = []

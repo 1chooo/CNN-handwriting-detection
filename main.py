@@ -6,9 +6,11 @@ Version: v0.0.1
 '''
 
 from os.path import join
-from Preprocessing import load_and_preprocess_data
+
 from Model import build_model
 from Plot import plot_model_results
+from Preprocessing import load_and_preprocess_data
+
 
 def main() -> None:
 

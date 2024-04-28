@@ -1,11 +1,13 @@
-from keras.models import Sequential
-from keras.layers import Dense, Dropout, Flatten, Conv2D, MaxPooling2D
-from keras.utils import np_utils
-from keras.layers.recurrent import LSTM
-import numpy as np
 import os
-import matplotlib.pyplot as plt
+
 import deal_with_data as dwd
+import matplotlib.pyplot as plt
+import numpy as np
+from keras.layers import Conv2D, Dense, Dropout, Flatten, MaxPooling2D
+from keras.layers.recurrent import LSTM
+from keras.models import Sequential
+from keras.utils import np_utils
+
 train_x , train_y = dwd.i_data.data_preprocess_CNN(os.getcwd()+"\\train_image")
 test_x, test_y = dwd.i_data.data_preprocess_CNN(os.getcwd() +"\\test_image")
 

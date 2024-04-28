@@ -7,6 +7,7 @@ Version: v0.0.1
 
 import matplotlib.pyplot as plt
 
+
 def plot_model_results(train_history):
     fig, axes = plt.subplots(
         1, 

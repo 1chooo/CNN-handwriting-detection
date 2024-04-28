@@ -1,13 +1,15 @@
-from PIL import Image
-import numpy as np 
 import os
+
+import numpy as np
 from keras.utils import np_utils
+from PIL import Image
+
+
 class i_data:
     @staticmethod
     def data_preprocess_CNN(datapath):
         '''input 1*28*28version'''
         img_row, img_col = 28, 28
-        datapath = datapath
         data_x = np.zeros((28,28)).reshape(1,28,28)
         pictureCount = 0
         data_y = []
@@ -29,8 +31,6 @@ class i_data:
     @staticmethod
     def data_preprocess_RNN(datapath):
         '''input 784version'''
-        # img_row, img_col = 28, 28
-        datapath = datapath
         data_x = np.zeros(784).reshape(784)
         pictureCount = 0
         data_y = []

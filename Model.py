@@ -5,9 +5,9 @@ Author: @1chooo (Hugo ChunHo Lin)
 Version: v0.0.1
 '''
 
+from keras.layers import Conv2D, Dense, Dropout, Flatten, MaxPooling2D
 from keras.models import Sequential
-from keras.layers import Dense, Dropout, Flatten
-from keras.layers import Conv2D, MaxPooling2D
+
 
 def build_model() -> Sequential:
     # Construct the "sequential" model.

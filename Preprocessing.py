@@ -6,9 +6,10 @@ Version: v0.0.1
 '''
 
 import os
+
 import numpy as np
-from PIL import Image
 import tensorflow as tf
+from PIL import Image
 
 # Create the function to read the data we have, then preprocess them. 
 # We seperate to xData and yData.

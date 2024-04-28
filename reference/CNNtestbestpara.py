@@ -1,10 +1,12 @@
-from keras.models import Sequential
-from keras.layers import Dense, Dropout, Flatten, Conv2D, MaxPooling2D
-from keras.utils import np_utils
-import numpy as np
 import os
-import matplotlib.pyplot as plt
+
 import deal_with_data as dwd
+import matplotlib.pyplot as plt
+import numpy as np
+from keras.layers import Conv2D, Dense, Dropout, Flatten, MaxPooling2D
+from keras.models import Sequential
+from keras.utils import np_utils
+
 # 0.9717
 model = Sequential()
 
